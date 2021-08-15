@@ -1,0 +1,13 @@
+.main-header {
+
+  a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &:hover, &:focus {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+}
