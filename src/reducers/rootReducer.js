@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import {UPDATE_ARTICLES, UPDATE_PHOTOS, UPDATE_USERS} from "../actions/types"
+import {createReducer} from "@reduxjs/toolkit";
+import {updateArticles, updatePhotos, updateUsers} from "../actions/actions";
 
 const initialState = {
   articles: [],
@@ -7,17 +8,21 @@ const initialState = {
   photos: []
 }
 
-const mainReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case UPDATE_ARTICLES: return { ...state, articles: action.payload }
-    case UPDATE_USERS: return { ...state, users: action.payload }
-    case UPDATE_PHOTOS: return { ...state, photos: action.payload }
-    default: return state
-  }
-}
+const mainReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(updateArticles, (state, action) => {
+      state.articles = [...action.payload]
+    })
+    .addCase(updateUsers, (state, action) => {
+      state.users = [...action.payload]
+    })
+    .addCase(updatePhotos, (state, action) => {
+      state.photos = [...action.payload]
+    })
+})
 
 const rootReducer = combineReducers({
-  main: mainReducer,
+  main: mainReducer
 })
 
 export default rootReducer
