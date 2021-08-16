@@ -1,16 +1,16 @@
-import React from 'react';
-import { Route, Switch } from 'react-router';
-import {Header} from "./main/header/Header";
+import React from 'react'
+import { Route, Switch } from 'react-router'
+import { Header } from "./components/header/Header"
 
 import './App.scss';
 
 import {useDispatch, useSelector} from "react-redux";
 import {fetchArticles, fetchPhotos, fetchUsers} from "./actions/async";
+import {ContentPage} from "./components/content-page/ContentPage";
 
 export const App = () =>  {
   const dispatch = useDispatch()
   const state = useSelector(state => state)
-  console.log({state})
 
   const onNavigate = path => {
     switch (path) {
@@ -33,16 +33,16 @@ export const App = () =>  {
         <div>
           <Switch>
             <Route exact path="/">
-              <div>home</div>
+              <ContentPage title="Home" />
             </Route>
             <Route path="/articles">
-              <div>articles</div>
+              <ContentPage title="Articles" data={state} />
             </Route>
             <Route path="/users">
-              <div>users</div>
+              <ContentPage title="Users" />
             </Route>
             <Route path="/photos">
-              <div>photos</div>
+              <ContentPage title="Photos" />
             </Route>
             <Route>
               <div>nothing</div>

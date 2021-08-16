@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import {createReducer} from "@reduxjs/toolkit";
-import {updateArticles, updatePhotos, updateUsers} from "../actions/actions";
+import { createReducer } from "@reduxjs/toolkit"
+import { updateArticles, updatePhotos, updateUsers } from "../actions/actions"
 
 const initialState = {
   articles: [],
