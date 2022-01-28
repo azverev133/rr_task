@@ -1,5 +1,5 @@
-import axios from "axios";
-import {updateArticles, updatePhotos, updateUsers} from "./actions";
+import axios from "axios"
+import { updateArticles, updatePhotos, updateUsers } from "./actions"
 
 export const fetchArticles = () => dispatch => axios.get('https://jsonplaceholder.typicode.com/posts')
   .then(response => dispatch(updateArticles(response.data)))
