@@ -31,9 +31,9 @@ export const App = () =>  {
   }
 
   return (
-      <div className="App">
+      <div className="app">
         <Header onNavigate={onNavigate}/>
-        <div>
+        <div className="content-page-outer">
           <Switch>
             <Route exact path="/">
               <ContentPage title="Home" />

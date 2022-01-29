@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 import { createReducer } from "@reduxjs/toolkit"
-import { updateArticles, updatePhotos, updateUsers } from "../actions/actions"
+import { updateArticles, updatePhotos, updateUsers, contentLoading, contentLoaded } from "../actions/actions"
 
 const initialState = {
   articles: [],
   users: [],
-  photos: []
+  photos: [],
+  loading: false
 }
 
 const mainReducer = createReducer(initialState, (builder) => {
@@ -18,6 +19,12 @@ const mainReducer = createReducer(initialState, (builder) => {
     })
     .addCase(updatePhotos, (state, action) => {
       state.photos = [...action.payload]
+    })
+    .addCase(contentLoading, (state, _) => {
+      state.loading = true
+    })
+    .addCase(contentLoaded, (state, _) => {
+      state.loading = false
     })
 })
 
