@@ -8,7 +8,7 @@ export const Header = props => (
   <Navbar bg="dark" variant="dark" className="main-header">
     <Container>
       <Navbar.Brand>
-        <Link to="/">Example</Link>
+        <Link to="/">RR</Link>
       </Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link>
