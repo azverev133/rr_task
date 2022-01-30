@@ -1,11 +1,13 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import { Header } from "./components/header/Header"
 
 import './App.scss';
 
 import { useDispatch, useSelector } from "react-redux"
 import { fetchArticles, fetchPhotos, fetchUsers } from "./actions/async"
+
+import { Header } from "./components/header/Header"
+import { MainContainer } from "./containers/main-container/MainContainer"
 import { ContentPage } from "./containers/content-page/ContentPage"
 
 export const App = () =>  {
@@ -33,7 +35,7 @@ export const App = () =>  {
   return (
       <div className="app">
         <Header onNavigate={onNavigate}/>
-        <div className="content-page-outer">
+        <MainContainer>
           <Switch>
             <Route exact path="/">
               <ContentPage title="Home" />
@@ -51,7 +53,7 @@ export const App = () =>  {
               <div>nothing</div>
             </Route>
           </Switch>
-        </div>
+        </MainContainer>
       </div>
   )
 }
