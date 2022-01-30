@@ -1,14 +1,14 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
 
+import { Header } from "./components/header/Header"
+import { MainContainer } from "./containers/main-container/MainContainer"
+import { ContentPage } from "./containers/content-page/ContentPage"
+
 import './App.scss';
 
 import { useDispatch, useSelector } from "react-redux"
 import { fetchArticles, fetchPhotos, fetchUsers } from "./actions/async"
-
-import { Header } from "./components/header/Header"
-import { MainContainer } from "./containers/main-container/MainContainer"
-import { ContentPage } from "./containers/content-page/ContentPage"
 
 import { ContentPageItemType } from "./components/content-page/ContentPageItemType"
 
