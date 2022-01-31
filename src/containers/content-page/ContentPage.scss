@@ -1,10 +1,18 @@
+@mixin center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .content-page {
 
   &-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    @include center-item;
+  }
+
+  &-empty {
+    @include center-item;
   }
 
 }
